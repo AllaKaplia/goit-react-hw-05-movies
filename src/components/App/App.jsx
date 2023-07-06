@@ -1,27 +1,25 @@
+import { Routes, Route } from "react-router-dom";
+import Cast from "components/Cast";
 import Home from "components/Home";
 import MovieDetails from "components/MovieDetails";
 import Movies from "components/Movies";
 import NotFound from "components/NotFound";
-import { Routes, Route, Link } from "react-router-dom";
+import Reviews from "components/Reviews";
+import SharedLayout from "components/SharedLayout";
 
 const App = () => {
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to="/" end>Home</Link>
-        </li>
-        <li>
-          <Link to="/movies" >Movies</Link>
-        </li>
-      </ul>
-      <Routes>
-        <Route path="/" element={<Home/>} />
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<Home />} />
         <Route path="/movies" element={<Movies/>} />
-        <Route path="/movies/:movieId" element={<MovieDetails />} />
+        <Route path="/movies/:movieId" element={<MovieDetails />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+      </Route>
+    </Routes>
   );
 };
 
