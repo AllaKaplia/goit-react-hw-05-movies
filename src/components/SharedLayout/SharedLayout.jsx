@@ -1,18 +1,20 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 import { BiSolidCameraMovie } from 'react-icons/bi';
+import { Suspense } from "react";
+import Loader from "components/Loader";
 
 const SharedLayout = () => {
     return(
         <div>
             <header>
-                <div>
+                <NavLink to="/">
                     <span>
                         <BiSolidCameraMovie />
                     </span>
                     <span>
                         GoWatchMovies
                     </span>
-                </div>
+                </NavLink>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
@@ -22,7 +24,13 @@ const SharedLayout = () => {
                     </li>
                 </ul>
             </header>
-            <Outlet />
+            <main>
+                <div>
+                    <Suspense fallback={<Loader />}>
+                        <Outlet />
+                    </Suspense>
+                </div>
+            </main>
         </div>
     );
 }
