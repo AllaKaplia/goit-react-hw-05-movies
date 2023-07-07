@@ -11,7 +11,8 @@ export const fetchTrendingMovies = async (signal) => {
             time_window: 'week'
         }
     })
+    console.log(response.data.results)
     
-    return response.data;
+    return response.data.results;
 };
 
