@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy } from "react";
 import SharedLayout from "components/SharedLayout";
-import { ToastContainer } from 'react-toastify';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const Movies = lazy(() => import('pages/Movies/Movies'));
@@ -21,7 +20,6 @@ const App = () => {
           <Route path="reviews" element={<Reviews />} />
         </Route>
         <Route path="*" element={<NotFound />} />
-        <Route path="*" element={<ToastContainer autoClose={3000} theme="dark" />} />
       </Route>
     </Routes>
   );
