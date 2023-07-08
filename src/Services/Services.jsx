@@ -10,8 +10,21 @@ export const fetchTrendingMovies = async (signal) => {
             api_key: KEY,
             time_window: 'week'
         }
-    })
+    });
     
     return response.data.results;
 };
 
+export const fetchMovies = async ({ nameMovies, signal }) => {
+    const response = await axios.get('search/movie', {
+        signal,
+        params: {
+            api_key: KEY,
+            query: nameMovies,
+            include_adult: false,
+            page: 1,
+        }
+    });
+
+    return response.data.results;
+}
