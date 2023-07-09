@@ -28,3 +28,14 @@ export const fetchMovies = async ({ nameMovies, signal }) => {
 
     return response.data.results;
 }
+
+export const fetchMovieDetails = async ({ movieId, signal }) => {
+    const response = await axios.get(`movie/${movieId}`, {
+        signal,
+        params: {
+            api_key: KEY,
+        }
+    })
+
+    return response.data.results;
+}
