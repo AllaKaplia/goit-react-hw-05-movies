@@ -9,7 +9,7 @@ const SharedLayout = () => {
             <header>
                 <NavLink to="/">
                     <span>
-                        <BiSolidCameraMovie />
+                        <BiSolidCameraMovie size={24} />
                     </span>
                     <span>
                         GoWatchMovies
