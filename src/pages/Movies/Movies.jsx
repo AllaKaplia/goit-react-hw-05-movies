@@ -51,14 +51,14 @@ const Movies = () => {
         
 
         getMovieList();
-    }, [nameMovie, nameMovies])
+    }, [nameMovies])
 
     const onNameMovieChange = (query) => {
         if(query === nameMovie) {
             return;
         }
 
-        setNameMovie(query);
+        setNameMovie(query.queryMovie);
         setError(null);
     }
 
@@ -67,7 +67,7 @@ const Movies = () => {
             <ToastContainer autoClose={3000} theme="colored" />
             <SearchBox onChange={onNameMovieChange} />
             {loading && <Loader />}
-            {!loading && movies.length > 0 && <MoviesList moviesSearch={movies} />}
+            {!loading && movies.length > 0 && <MoviesList movies={movies} />}
             {error && <div>{error}</div>}
         </div>
     )
