@@ -48,9 +48,9 @@ export default function SearchBar({ onChange }){
                 />
                 <button type='submit'>
                     <span>Search</span>
-                    <RiMovie2Line />
+                    <RiMovie2Line size={24} />
                 </button>
-                {errors.queryMovie && <div>{errors.queryMovie}</div>}
+                {errors.queryMovie && <div>{errors.message}</div>}
             </Form>
             )}
         </Formik>
