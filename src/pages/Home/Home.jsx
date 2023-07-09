@@ -23,6 +23,7 @@ const Home = () => {
         setError(null);
           
         const movies = await fetchTrendingMovies(abortController.current.signal);
+        
         setMoviesList(movies);
         setLoading(false);
       } catch (error) {
@@ -42,9 +43,9 @@ const Home = () => {
     <div>
       <h1>This week's movie trends</h1>
       {loading && <Loader />}
-      {!loading && moviesList.length > 0 && <MoviesList movies={moviesList} />}
+      {!loading && moviesList.length > 0 && <MoviesList moviesTrending={moviesList} />}
       {error && <div>{error}</div>}
-  </div>
+    </div>
   )
 };
 
