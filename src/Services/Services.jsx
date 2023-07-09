@@ -37,5 +37,5 @@ export const fetchMovieDetails = async ({ movieId, signal }) => {
         }
     })
 
-    return response.data.results;
+    return response.data;
 }
