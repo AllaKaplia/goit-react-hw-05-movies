@@ -4,11 +4,10 @@ const KEY = '46ee399c81006beac7a91a0ab15f7750';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
 export const fetchTrendingMovies = async (signal) => {
-    const response = await axios.get('trending/all/day', {
+    const response = await axios.get('trending/movie/day', {
         signal,
         params: {
             api_key: KEY,
-            time_window: 'week'
         }
     });
     
@@ -32,8 +31,9 @@ export const fetchMovies = async ({ nameMovies, signal }) => {
 export const fetchMovieDetails = async ({ movieId, signal }) => {
     const response = await axios.get(`movie/${movieId}`, {
         signal,
-        params: {
+        params: { 
             api_key: KEY,
+            language: 'en-US', 
         }
     })
 
