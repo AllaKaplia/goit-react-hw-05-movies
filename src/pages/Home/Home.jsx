@@ -32,7 +32,7 @@ const Home = () => {
           setLoading(false);
         }
       } finally {
-          setLoading(false);
+        setLoading(false);
       }
   };
 
@@ -43,7 +43,7 @@ const Home = () => {
     <div>
       <h1>This day's movie trends</h1>
       {loading && <Loader />}
-      {!loading && moviesList.length > 0 && <MoviesList moviesTrending={moviesList} />}
+      {!loading && moviesList.length > 0 && <MoviesList movies={moviesList} />}
       {error && <div>{error}</div>}
     </div>
   )
