@@ -3,7 +3,7 @@
 const MovieInfo = ({ title, release, overview, genres, src, originalTitle, rating }) => {
     return (
         <div>
-            <img src={src} alt={originalTitle} />
+            <img src={`https://image.tmdb.org/t/p/w500${src}`} alt={originalTitle} />
             <div>
                 <h1>{title} {release}</h1>
                 <p>User rating: {Math.floor(rating * 10)}%</p>
