@@ -41,7 +41,7 @@ const Home = () => {
 
   return(
     <div>
-      <h1>This week's movie trends</h1>
+      <h1>This day's movie trends</h1>
       {loading && <Loader />}
       {!loading && moviesList.length > 0 && <MoviesList moviesTrending={moviesList} />}
       {error && <div>{error}</div>}
