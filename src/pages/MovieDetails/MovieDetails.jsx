@@ -12,8 +12,7 @@ const MovieDetails = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const abortController = useRef();
-  const movieId = useParams();
-
+  const { movieId } = useParams();
   const location = useLocation();
   const goBackLink = useRef(location?.state?.from ?? "/");
 
@@ -29,11 +28,11 @@ const MovieDetails = () => {
         setLoading(true);
         setError(null);
 
-        const movieInfo = await fetchMovieDetails(
-          movieId,
-          abortController.current.signal
-        );
-
+        const movieInfo = await fetchMovieDetails({
+          movieId: movieId,
+          signal: abortController.current.signal
+        });
+        
         setMoviesDetails(movieInfo);
         setError(null);
       } catch (error) {
@@ -63,9 +62,9 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <h2>Additional information</h2>     
+      <h2>Additional information</h2>
       <GoBackLink to={goBackLink.current} />
-      {!loading && moviesDetails && title && release_date && overview && genres && poster_path && original_title && vote_average && (
+      {!loading && moviesDetails && 
         <MovieInfo
           title={title}
           release={release_date}
@@ -74,8 +73,7 @@ const MovieDetails = () => {
           src={poster_path}
           originalTitle={original_title}
           rating={vote_average}
-        />
-      )}
+        />}
 
       <DetailsNav />
       {error && <div>{error}</div>}
