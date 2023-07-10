@@ -58,7 +58,7 @@ const Movies = () => {
             return;
         }
 
-        setNameMovie(nameMovie);
+        setNameMovie(query);
         setError(null);
     }
 
