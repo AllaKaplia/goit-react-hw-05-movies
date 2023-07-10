@@ -8,6 +8,7 @@ export const fetchTrendingMovies = async (signal) => {
         signal,
         params: {
             api_key: KEY,
+            language: 'en-US'
         }
     });
     
@@ -20,8 +21,6 @@ export const fetchMovies = async ({ nameMovies, signal }) => {
         params: {
             api_key: KEY,
             query: nameMovies,
-            include_adult: false,
-            page: 1,
         }
     });
 
@@ -33,9 +32,33 @@ export const fetchMovieDetails = async ({ movieId, signal }) => {
         signal,
         params: { 
             api_key: KEY,
-            language: 'en-US', 
+            language: 'en-US' 
         }
     })
 
     return response.data;
+}
+
+export const fetchCast = async ({ movieId, signal }) => {
+    const response = await axios.get(`movie/${movieId}/credits`, {
+        signal,
+        params: {
+            api_key: KEY,
+            language: 'en-US'
+        }
+    })
+
+    return response.data.cast;
+}
+
+export const fetchReviews = async ({ movieId, signal }) => {
+    const response = await axios.get(`movie/${movieId}/reviews`, {
+        signal,
+        params: {
+            api_key: KEY,
+            language: 'en-US' 
+        }
+    });
+
+    return response.data.results;
 }
