@@ -58,7 +58,7 @@ const Movies = () => {
             return;
         }
 
-        setNameMovie(query.queryMovie);
+        setNameMovie(nameMovie);
         setError(null);
     }
 
@@ -68,7 +68,7 @@ const Movies = () => {
             <SearchBox onChange={onNameMovieChange} />
             {loading && <Loader />}
             {!loading && movies.length > 0 && <MoviesList movies={movies} />}
-            {error && <div>{error}</div>}
+            {error && <div>{error.message}</div>}
         </div>
     )
 }
