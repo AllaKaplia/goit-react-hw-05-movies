@@ -62,7 +62,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <h2>Additional information</h2>
+      <h2>Detailed description of the film</h2>
       <GoBackLink to={goBackLink.current} />
       {!loading && moviesDetails && 
         <MovieInfo
