@@ -1,16 +1,15 @@
-import { MagnifyingGlass } from "react-loader-spinner";
+import { Hearts } from "react-loader-spinner";
 
 const Loader = () => {
     return (
-        <MagnifyingGlass
-        visible={true}
+        <Hearts 
         height="80"
         width="80"
-        ariaLabel="MagnifyingGlass-loading"
+        color="#07bc0c"
+        ariaLabel="hearts-loading"
         wrapperStyle={{}}
-        wrapperClass="MagnifyingGlass-wrapper"
-        glassColor = '#c0efff'
-        color = '#e15b64'
+        wrapperClass=""
+        visible={true}
         />
     )
 }
