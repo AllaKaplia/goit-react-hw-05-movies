@@ -2,6 +2,7 @@ import Loader from "components/Loader";
 import MoviesList from "components/MoviesList";
 import { useState, useEffect, useRef } from "react";
 import { fetchTrendingMovies } from "Services/Services";
+import { TitleHome } from "./Home.styled";
 
 const Home = () => {
   const [moviesList, setMoviesList] = useState([]);
@@ -16,37 +17,41 @@ const Home = () => {
         if (abortController.current) {
           abortController.current.abort();
         }
-          
+
         abortController.current = new AbortController();
-          
+
         setLoading(true);
         setError(null);
-          
+
         const movies = await fetchTrendingMovies(abortController.current.signal);
-        
+
         setMoviesList(movies);
         setLoading(false);
       } catch (error) {
-        if (error.name !== "AbortError") {
+        if (error.code !== 'ERR_CANCELED') {
           setError("Sorry, an error occurred :( Try reloading the page!");
           setLoading(false);
         }
       } finally {
         setLoading(false);
       }
-  };
+    };
 
-  getTrendingWeekMovies();
-}, []);
+    getTrendingWeekMovies();
+  }, []);
 
-  return(
-    <div>
-      <h1>This day's movie trends</h1>
+  return (
+    <>
+      <TitleHome>This day's movie trends</TitleHome>
       {loading && <Loader />}
-      {!loading && moviesList.length > 0 && <MoviesList movies={moviesList} />}
+      {!loading && moviesList.length > 0 ? (
+        <MoviesList movies={moviesList} />
+      ) : (
+        !loading && <div>No movies found</div>
+      )}
       {error && <div>{error}</div>}
-    </div>
-  )
+    </>
+  );
 };
 
 export default Home;
