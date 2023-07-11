@@ -1,16 +1,22 @@
-import { NavLink } from "react-router-dom";
+import { GiClick } from 'react-icons/gi';
+import { Additional, DetailsItem, DetailsList, LinkCast } from "./DetailsNav.styled";
 
 
 const DetailsNav = () => {
     return (
-        <ul>
-            <li>
-                <NavLink to='cast'>Cast</NavLink>
-            </li>
-            <li>
-                <NavLink to='reviews'>Reviews</NavLink>
-            </li>
-        </ul>
+        <div>
+            <Additional>Additional Information</Additional>
+            <DetailsList>
+                <DetailsItem>
+                    <LinkCast to='cast'>Cast</LinkCast>
+                    <GiClick size={30}/>
+                </DetailsItem>
+                <DetailsItem>
+                    <LinkCast to='reviews'>Reviews</LinkCast>
+                    <GiClick size={30}/>
+                </DetailsItem>
+            </DetailsList>
+        </div>
     )
 }
 
