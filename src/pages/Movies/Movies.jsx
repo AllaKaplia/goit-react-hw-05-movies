@@ -34,13 +34,13 @@ const Movies = () => {
         
                 const movieList = await fetchMovies({ nameMovies, signal: abortController.current.signal });
                 if (movieList.length === 0) {
-                    toast.info('Sorry, no movies were found for your request :(');
+                    toast.success('Sorry, no movies were found for your request :(');
                 }
         
                 setMovies(movieList);
                 setError(null);
             } catch (error) {
-                if (error.name !== 'AbortError') {
+                if (error.code !== 'ERR_CANCELED') {
                     setError('Sorry, an error occurred :( Try reloading the page!');
                     setLoading(false);
                 }
@@ -64,7 +64,7 @@ const Movies = () => {
 
     return (
         <div>
-            <ToastContainer autoClose={3000} theme="colored" />
+            <ToastContainer autoClose={3000} theme="colored" position="bottom-right" />
             <SearchBox onChange={onNameMovieChange} />
             {loading && <Loader />}
             {!loading && movies.length > 0 && <MoviesList movies={movies} />}
