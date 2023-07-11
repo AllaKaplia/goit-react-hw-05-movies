@@ -4,7 +4,7 @@ const Loader = () => {
     return (
         <Hearts 
         height="80"
-        width="80"
+        width="100"
         color="#07bc0c"
         ariaLabel="hearts-loading"
         wrapperStyle={{}}
