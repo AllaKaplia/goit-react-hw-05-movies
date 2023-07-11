@@ -56,7 +56,9 @@ export const BoxNav = styled.ul`
 `;
 
 export const LinkButton = styled.button`
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     padding: 10px 20px;
     background-color: #49d84d;
     color: white;
