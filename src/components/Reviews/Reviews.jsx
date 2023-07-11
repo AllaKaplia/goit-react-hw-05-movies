@@ -2,7 +2,7 @@ import Loader from "components/Loader";
 import { useRef, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviews } from "Services/Services";
-import { Message } from "./Reviews.styled";
+import { Author, Descriptions, Message, ReviewsLi } from "./Reviews.styled";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -50,10 +50,10 @@ const Reviews = () => {
         <div>
           <ul>
             {reviews.map(({ id, author, content }) => (
-              <li key={id}>
-                <h3>Author: {author}</h3>
-                <p>Description: {content}</p>
-              </li>
+              <ReviewsLi key={id}>
+                <Author>Author: {author}</Author>
+                <Descriptions>Description: {content}</Descriptions>
+              </ReviewsLi>
             ))}
           </ul>
         </div>
