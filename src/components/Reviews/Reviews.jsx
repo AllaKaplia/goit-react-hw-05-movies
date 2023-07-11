@@ -30,13 +30,13 @@ const Reviews = () => {
                 });
 
                 if (reviewsDetails.length === 0) {
-                    return toast.info('Sorry, there are no reviews for this movie yet.');
+                    return toast.success('Sorry, there are no reviews for this movie yet.');
                 }
                   
                 setReviews(reviewsDetails);
                 setError(null);
             } catch (error) {
-                if (error.name !== "AbortError") {
+                if (error.code !== 'ERR_CANCELED') {
                     setError("Sorry, an error occurred :( Try reloading the page!");
                     setLoading(false);
                 }
