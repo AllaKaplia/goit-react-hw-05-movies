@@ -36,7 +36,7 @@ const MovieDetails = () => {
         setMoviesDetails(movieInfo);
         setError(null);
       } catch (error) {
-        if (error.name !== "AbortError") {
+        if (error.code !== 'ERR_CANCELED') {
           setError(
             "Sorry, an error occurred :( Try reloading the page!"
           );
@@ -62,7 +62,6 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <h2>Detailed description of the film</h2>
       <GoBackLink to={goBackLink.current} />
       {!loading && moviesDetails && 
         <MovieInfo
