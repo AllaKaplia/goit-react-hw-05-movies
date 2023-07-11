@@ -3,14 +3,15 @@ import styled from '@emotion/styled';
 export const ContainerBack = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 40px;
     margin-bottom: 20px;
 `;
 
 export const GoBack = styled.button`
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 10px 20px;
     background-color: #49d84d;
     color: white;
