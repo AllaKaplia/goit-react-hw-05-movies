@@ -40,6 +40,9 @@ export const LogoText = styled.span`
 `;
 
 export const LogoIcon = styled.span`
+    &:hover, &:focus {
+       color: #1b511d;
+    };
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 `;
 
