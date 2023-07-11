@@ -55,7 +55,7 @@ export const OriginalTitle = styled.h3`
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: #135813;;
+    color: #135813;
 `;
 
 export const Language = styled.p`
