@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #97fa9b;
 }
 
 code {
@@ -29,6 +30,7 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  list-style-type: none;
 }
 
 img {
@@ -39,4 +41,5 @@ img {
 
 a, link {
   text-decoration: none;
+  /* color: #97fa9b; */
 }
