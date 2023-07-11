@@ -2,7 +2,8 @@ import Loader from "components/Loader";
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCast } from "Services/Services";
-import placeholderImage from "../../imgPlaceholder/png-transparent-silhouette-man-silhouette-animals-silhouette-public-domain.png";
+import placeholderImage from "../../imgPlaceholder/1647644742_22-amiel-club-p-siluet-cheloveka-kartinki-24.png";
+import { CastList, DetailsBox, NameActor, Popular, Role } from "./Cast.styled";
 
 
 const Cast = () => {
@@ -48,16 +49,18 @@ const Cast = () => {
     return (
         <div>
             {loading && <Loader />}
-            {cast && <ul>
+            {cast && <CastList>
                         {cast.map(({ id, name, character, original_name, profile_path, popularity }) => (
                             <li key={id}>
-                                <img src={profile_path ? `https://image.tmdb.org/t/p/w500${profile_path}` : placeholderImage} alt={name} width={150}/>
-                                <h3>{original_name}</h3>
-                                <h4>Played the role of a character: {character}</h4>
-                                <p>Actor's popularity statistics: {popularity}</p>
+                                <img src={profile_path ? `https://image.tmdb.org/t/p/w500${profile_path}` : placeholderImage} alt={name} width={170}/>
+                                <DetailsBox>
+                                    <NameActor>{original_name}</NameActor>
+                                    <Role>Role: {character}</Role>
+                                    <Popular>Actor's popularity: {popularity}</Popular>
+                                </DetailsBox>
                             </li>
                         ))}
-                    </ul>}
+                    </CastList>}
             {error && <div>{error.message}</div> }
         </div>
     )
