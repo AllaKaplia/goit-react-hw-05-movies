@@ -1,9 +1,10 @@
 import { useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Field, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import { RiMovie2Line } from 'react-icons/ri';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BoxForm, BtnSearch, Input } from './SearchBox.styled';
 
 export default function SearchBar({ onChange }) {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -25,12 +26,12 @@ export default function SearchBar({ onChange }) {
     const queryMovie = values.queryMovie.trim();
   
     if (queryMovie === '') {
-      toast.error('Name is required');
+      toast.success('Name is required');
       return;
     }
   
     if (queryMovie.includes(' ')) {
-      toast.error('Name cannot contain spaces');
+      toast.success('Name cannot contain spaces');
       return;
     }
   
@@ -44,11 +45,13 @@ export default function SearchBar({ onChange }) {
     <Formik initialValues={initialValue} onSubmit={handleSearchForm}>
       {({ handleSubmit, errors }) => (
         <Form autoComplete="off" onSubmit={handleSubmit}>
-          <Field type="text" name="queryMovie" autoFocus placeholder="Search movies" />
-          <button type="submit">
-            <span>Search</span>
-            <RiMovie2Line size={24} />
-          </button>
+          <BoxForm>
+            <Input type="text" name="queryMovie" autoFocus placeholder="Search movies" />
+            <BtnSearch type="submit">
+              <span>Search</span>
+              <RiMovie2Line size={24} />
+            </BtnSearch>
+          </BoxForm>
           {errors.queryMovie && toast.error(errors.queryMovie.message)}
         </Form>
       )}
