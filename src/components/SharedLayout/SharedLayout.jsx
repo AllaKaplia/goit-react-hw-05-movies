@@ -3,6 +3,7 @@ import { BiSolidCameraMovie } from 'react-icons/bi';
 import { Suspense } from "react";
 import Loader from "components/Loader";
 import { BoxNav, Container, Header, LinkButton, LogoIcon, LogoText, NavLogo } from "./SharedLayout.styled";
+import { RiHomeHeartFill, RiMovie2Line } from 'react-icons/ri';
 
 const SharedLayout = () => {
     return(
@@ -19,12 +20,18 @@ const SharedLayout = () => {
                 <BoxNav>
                     <li>
                         <Link to="/">
-                            <LinkButton type="button">Home</LinkButton>
+                            <LinkButton type="button">
+                                <RiHomeHeartFill />
+                                Home
+                            </LinkButton>
                         </Link>
                     </li>
                     <li>
                         <Link to="/movies">
-                            <LinkButton type="button">Movies</LinkButton>
+                            <LinkButton type="button">
+                                <RiMovie2Line />
+                                Movies
+                            </LinkButton>
                         </Link>
                     </li>
                 </BoxNav>
