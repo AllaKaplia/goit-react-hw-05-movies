@@ -1,37 +1,42 @@
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { BiSolidCameraMovie } from 'react-icons/bi';
 import { Suspense } from "react";
 import Loader from "components/Loader";
+import { BoxNav, Container, Header, LinkButton, LogoIcon, LogoText, NavLogo } from "./SharedLayout.styled";
 
 const SharedLayout = () => {
     return(
-        <div>
-            <header>
-                <NavLink to="/">
-                    <span>
-                        <BiSolidCameraMovie size={24} />
-                    </span>
-                    <span>
+        <Container>
+            <Header>
+                <NavLogo to="/">
+                    <LogoIcon>
+                        <BiSolidCameraMovie size={40}/>
+                    </LogoIcon>
+                    <LogoText>
                         GoWatchMovies
-                    </span>
-                </NavLink>
-                <ul>
+                    </LogoText>
+                </NavLogo>
+                <BoxNav>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/">
+                            <LinkButton type="button">Home</LinkButton>
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/movies" >Movies</Link>
+                        <Link to="/movies">
+                            <LinkButton type="button">Movies</LinkButton>
+                        </Link>
                     </li>
-                </ul>
-            </header>
-            <main>
+                </BoxNav>
+            </Header>
+            <Container>
                 <div>
                     <Suspense fallback={<Loader />}>
                         <Outlet />
                     </Suspense>
                 </div>
-            </main>
-        </div>
+            </Container>
+        </Container>
     );
 }
 
