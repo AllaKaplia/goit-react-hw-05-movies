@@ -39,5 +39,5 @@ export const TextNotFound = styled.p`
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: #057205;
+    color: #b31bb4;
 `;
