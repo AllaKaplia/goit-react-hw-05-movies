@@ -12,23 +12,23 @@ export const BoxForm = styled(Form)`
 export const Input = styled(Field)`
     padding: 10px;
     width: 300px;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: 5px;
     font-size: 20px;
     color: #1f551f;
     border-radius: 30px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     &:hover, &:focus {
-        border: 2px solid transparent; 
+        border: none; 
     }
 `;
 
 export const BtnSearch = styled.button`
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 5px;
     padding: 10px 20px;
-    background-color: #49d84d;
+    background-color: #f19e26;
     color: white;
     border: none;
     text-align: center;
@@ -39,7 +39,7 @@ export const BtnSearch = styled.button`
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 
     &:hover{
-        background-color: #45a049;
+        background-color: #f68943;
     };
 
     &:focus {
