@@ -17,7 +17,7 @@ export const Header = styled.header`
     padding-bottom: 12px;
     margin-bottom: 20px;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #ed9229;;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
@@ -35,13 +35,13 @@ export const LogoText = styled.span`
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 
     &:hover, &:focus {
-       color: #1b511d;
+       color: #b31bb4;
     };
 `;
 
 export const LogoIcon = styled.span`
     &:hover, &:focus {
-       color: #1b511d;
+       color: #b31bb4;
     };
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 `;
@@ -60,7 +60,7 @@ export const LinkButton = styled.button`
     align-items: center;
     gap: 5px;
     padding: 10px 20px;
-    background-color: #49d84d;
+    background-color: #f19e26;
     color: white;
     border: none;
     text-align: center;
@@ -71,7 +71,7 @@ export const LinkButton = styled.button`
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     
     &:hover{
-        background-color: #45a049;
+        background-color: #f68943;
     };
 
     &:focus {
