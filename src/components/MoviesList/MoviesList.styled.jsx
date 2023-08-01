@@ -46,7 +46,10 @@ export const ContainerDescription = styled.div`
     width: 220px;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0px 0px 4px 4px;
-    background-color: #bff1c2;
+    background-color: #f1e7bf;
+    &:hover, &:focus {
+        background-color: #f68943;
+    }
 `;
 
 export const OriginalTitle = styled.h3`
@@ -55,7 +58,7 @@ export const OriginalTitle = styled.h3`
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: #135813;
+    color: #b31bb4;
 `;
 
 export const Language = styled.p`
@@ -63,12 +66,12 @@ export const Language = styled.p`
     font-size: 18px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #135813;
+    color: #b31bb4;
 `;
 
 export const Data = styled.p`
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #135813;
+    color: #b31bb4;
 `;
