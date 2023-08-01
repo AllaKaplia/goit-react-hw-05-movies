@@ -9,7 +9,7 @@ export const Additional = styled.h2`
     letter-spacing: 0.02em;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    color: #057205;
+    color: #b31bb4;
 `;
 
 export const DetailsList = styled.ul`
@@ -25,10 +25,10 @@ export const DetailsItem = styled.li`
     align-items: center;
     justify-content: center;
     gap: 10px;
-    color: #164216;
+    color: #b31bb4;
     &:hover{
         color: #fff;
-        background-color: #45a049;
+        background-color: #b31bb4;
     };
 
     &:focus {
@@ -43,10 +43,10 @@ export const LinkCast = styled(NavLink)`
     font-size: 25px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: #164216;
+    color: #b31bb4;
     &:hover{
         color: #fff;
-        background-color: #45a049;
+        background-color: #b31bb4;
     };
 
     &:focus {
